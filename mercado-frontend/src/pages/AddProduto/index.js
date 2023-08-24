@@ -37,35 +37,45 @@ class AddProduto extends Component {
   render() {
     return (
       <div>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Produto</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Insira o nome do produto"
-              value={this.state.titulo}
-              onChange={this.changeTituloHandler}
-            />
-            <small id="emailHelp" class="form-text text-muted"></small>
+        <div class="container p-5">
+          <div class="row">
+            <div class="col">
+              <div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Produto</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Insira o nome do produto"
+                    value={this.state.titulo}
+                    onChange={this.changeTituloHandler}
+                  />
+                  <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Descrição</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Insira a descrição do produto"
+                    value={this.state.descricao}
+                    onChange={this.changeDescricaoHandler}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  onClick={this.saveProduto}
+                >
+                  Salvar
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Descrição</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputPassword1"
-              placeholder="Insira a descrição do produto"
-              value={this.state.descricao}
-              onChange={this.changeDescricaoHandler}
-            />
-          </div>
-          <button type="submit" class="btn btn-primary" onClick={this.saveProduto}>
-            Submit
-          </button>
-        </form>
+        </div>
       </div>
     );
   }

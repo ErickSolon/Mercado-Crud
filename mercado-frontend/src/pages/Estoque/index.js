@@ -24,45 +24,47 @@ const Estoque = () => {
 
   return (
     <div>
-      <div class="row">
-        <div class="col">
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Título</th>
-                <th scope="col">Produto</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {produto.map((e) => {
-                return (
-                  <tr key={e.id}>
-                    <th scope="row">{e.id}</th>
-                    <td>{e.titulo}</td>
-                    <td>{e.descricao}</td>
-                    <td>
-                      <button
-                        type="button"
-                        class="btn btn-alert"
-                        onClick={(id) => updateItem(e.id)}
-                      >
-                        Atualizar
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-alert"
-                        onClick={(id) => deleteItem(e.id)}
-                      >
-                        Deletar
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+      <div class="container p-5">
+        <div class="row">
+          <div class="col">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Título</th>
+                  <th scope="col">Produto</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {produto.map((e) => {
+                  return (
+                    <tr key={e.id}>
+                      <th scope="row">{e.id}</th>
+                      <td>{e.titulo}</td>
+                      <td>{e.descricao}</td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn btn-warning"
+                          onClick={(id) => updateItem(e.id)}
+                        >
+                          Atualizar
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-danger"
+                          onClick={(id) => deleteItem(e.id)}
+                        >
+                          Deletar
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
