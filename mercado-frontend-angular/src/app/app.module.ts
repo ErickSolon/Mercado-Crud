@@ -15,6 +15,12 @@ import { HomeComponent } from './views/home/home.component';
 import { EstoqueComponent } from './views/estoque/estoque.component';
 import { AddprodutoComponent } from './views/addproduto/addproduto.component';
 import { BodyComponent } from './components/templates/body/body.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,11 @@ import { BodyComponent } from './components/templates/body/body.component';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
