@@ -5,8 +5,9 @@
 
 
 <h2>React</h2>
+
  - Página de estoque
-  
+ 
    ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/4c9b7fbb-3c5e-4e86-9125-ea50d2aa1519)
 
  - Página para atualizar produto
