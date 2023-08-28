@@ -1,15 +1,16 @@
-<mat-card>
-    <mat-card-title>
-        Atualizar Produto
-    </mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Produto" [(ngModel)]="produto.titulo" name="titulo">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Descrição" [(ngModel)]="produto.descricao" name="descricao">
-        </mat-form-field>
-    </form>
-</mat-card>
-
-<button mat-raised-button (click)="updateProduto()">Salvar</button>
+<div class="div-card">
+    <mat-card class="mat-elevation-z4">
+        <mat-card-title>
+            Atualizar Produto
+        </mat-card-title>
+        <form class="form-style">
+            <mat-form-field>
+                <input matInput placeholder="Produto" [(ngModel)]="produto.titulo" name="titulo">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Descrição" [(ngModel)]="produto.descricao" name="descricao">
+            </mat-form-field>
+        </form>
+    </mat-card>
+    <button mat-raised-button (click)="updateProduto()">Salvar</button>
+</div>

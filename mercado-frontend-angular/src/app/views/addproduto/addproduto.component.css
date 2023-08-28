@@ -1,0 +1,32 @@
+.div-card {
+    padding: 25px;
+    color: white;
+}
+
+.div-card>mat-card>mat-card-title {
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+.form-style>mat-form-field {
+    padding: 10px;
+}
+
+#mat-input-0 {
+    color: white;
+}
+
+#mat-input-1 {
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-card>button {
+    margin-top: 5px;
+    display: flex;
+}
