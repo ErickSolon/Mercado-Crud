@@ -1,10 +1,10 @@
 # Mercado-Crud
-Principais tecnologias utilizadas neste projeto:
- - Spring boot
+<h2>Backend</h2>
+ - Spring Boot
  - H2
- - React
 
-- React
+
+<h2>React</h2>
   - Página de estoque
   
    ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/4c9b7fbb-3c5e-4e86-9125-ea50d2aa1519)
@@ -19,7 +19,7 @@ Principais tecnologias utilizadas neste projeto:
     
      ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/037978af-2f0f-4a41-9c78-65e36216af12)
     
-- Angular
+<h2>Angular</h2>
    - Pàgina de estoque
      
       ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/2885fd81-65e5-46ac-b33f-bc950a0a3157)
