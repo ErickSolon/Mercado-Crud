@@ -3,11 +3,12 @@ Principais tecnologias utilizadas neste projeto:
  - Spring boot
  - H2
  - React
-<hr>
+<hr />
 - Frontend
  - React
   - Página de estoque
-     ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/0ee708ca-f9e2-4899-8e9e-907c56bbfe50)
+   ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/f7d48ca6-c3f6-435a-a0c5-ee0b9acf959d)
+
  
   - Página para atualizar produto
      ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/001e5160-f5c9-4373-b0f1-52548adc9857)
