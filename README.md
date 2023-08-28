@@ -3,7 +3,7 @@ Principais tecnologias utilizadas neste projeto:
  - Spring boot
  - H2
  - React
-
+<hr>
 - Frontend
  - React
   - Página de estoque
