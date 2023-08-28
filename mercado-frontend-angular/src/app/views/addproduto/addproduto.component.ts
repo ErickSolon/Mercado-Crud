@@ -10,7 +10,7 @@ import { Mercado } from 'src/app/models/mercado.model';
 })
 export class AddprodutoComponent implements OnInit {
   mercado: Mercado = {
-    produto: "",
+    titulo: "",
     descricao: ""
   }
 

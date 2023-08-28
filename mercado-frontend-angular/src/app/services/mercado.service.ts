@@ -13,4 +13,20 @@ export class MercadoService {
   create(mercadoEstoque: Mercado): Observable<Mercado> {
     return this.httpclient.post<Mercado>(this.baseURL, mercadoEstoque);
   }
+
+  getAll(): Observable<Mercado[]> {
+    return this.httpclient.get<Mercado[]>(this.baseURL);
+  }
+
+  getById(id: string): Observable<Mercado> {
+    return this.httpclient.get<Mercado>(this.baseURL+id);
+  }
+
+  updateById(id: string, mercadoEstoque: Mercado): Observable<Mercado> {
+    return this.httpclient.put<Mercado>(this.baseURL+id, mercadoEstoque);
+  }
+
+  deleteById(id: string): Observable<Mercado>{
+    return this.httpclient.delete<Mercado>(this.baseURL+id);
+  }
 }

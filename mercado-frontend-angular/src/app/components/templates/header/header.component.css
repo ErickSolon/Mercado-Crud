@@ -5,3 +5,8 @@
 span {
   padding-left: 16px;
 }
+
+.icone {
+  display: flex;
+  align-items: center;
+}

@@ -3,6 +3,7 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { AddprodutoComponent } from './views/addproduto/addproduto.component';
+import { UpdateProdutoComponent } from './views/update-produto/update-produto.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "add",
     component: AddprodutoComponent
+  },
+  {
+    path: "update/:id",
+    component: UpdateProdutoComponent
   }
 ];
 

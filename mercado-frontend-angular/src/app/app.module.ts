@@ -21,6 +21,10 @@ import {MatInputModule} from '@angular/material/input'
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { UpdateProdutoComponent } from './views/update-produto/update-produto.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     EstoqueComponent,
     AddprodutoComponent,
-    BodyComponent
+    BodyComponent,
+    UpdateProdutoComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,10 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

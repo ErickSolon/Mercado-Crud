@@ -1,5 +1,5 @@
 export interface Mercado {
     id?: number
-    produto: string
+    titulo: string
     descricao: string
 }
