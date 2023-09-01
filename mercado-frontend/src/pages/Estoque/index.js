@@ -46,7 +46,7 @@ const Estoque = () => {
           <tr>
             <th scope="col">#</th>
             <th scope="col">Título</th>
-            <th scope="col">Produto</th>
+            <th scope="col">Descrição</th>
             <th></th>
           </tr>
         </thead>
