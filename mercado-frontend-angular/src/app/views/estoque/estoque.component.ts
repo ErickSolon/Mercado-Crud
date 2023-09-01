@@ -10,24 +10,33 @@ import { MercadoService } from 'src/app/services/mercado.service';
 })
 export class EstoqueComponent implements OnInit {
   mercado: Mercado[] = [];
-  displayedColumns = ['id', 'titulo', 'descricao', 'action']
+  totalItems = 0;
+  currentPage = 1;
+  produtosPerPage = 5;
 
-  constructor(private service: MercadoService) {
-  }
-  
+  displayedColumns = ['id', 'titulo', 'descricao', 'action'];
+
+  constructor(private service: MercadoService) {}
+
   ngOnInit(): void {
-    this.service.getAll().subscribe(mercados => {
-      this.mercado = mercados;
+    this.fetchProdutos();
+  }
+
+  fetchProdutos(): void {
+    this.service.getAll(this.currentPage, this.produtosPerPage).subscribe((data) => {
+      this.mercado = data.content;
+      this.totalItems = data.totalElements;
     });
   }
 
   deleteProduto(id: string): void {
-    this.service.deleteById(id).subscribe(
-      () => {
-        this.service.getAll().subscribe(mercados => {
-      this.mercado = mercados;
+    this.service.deleteById(id).subscribe(() => {
+      this.fetchProdutos();
     });
-      },
-    );
+  }
+
+  onPageChange(event: any): void {
+    this.currentPage = event.pageIndex + 1;
+    this.fetchProdutos();
   }
 }
