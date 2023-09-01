@@ -3,6 +3,9 @@ package com.mercado.mercado.controller;
 import com.mercado.mercado.model.dto.ProdutosDTO;
 import com.mercado.mercado.service.ProdutoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,9 +19,8 @@ public class MercadoController {
     private final ProdutoService produtoService;
 
     @GetMapping
-    public ResponseEntity<List<ProdutosDTO>> getProdutos() {
-        List<ProdutosDTO> produtosDTOList = produtoService.findAll();
-        return ResponseEntity.ok(produtosDTOList);
+    public ResponseEntity<Page<ProdutosDTO>> getProdutos(@PageableDefault(page = 0, sort = {"titulo"}) Pageable pageable) {
+        return ResponseEntity.ok(produtoService.findAll(pageable));
     }
 
     @GetMapping("{id}")

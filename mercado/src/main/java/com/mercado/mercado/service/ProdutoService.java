@@ -6,6 +6,8 @@ import com.mercado.mercado.repository.ProdutoRepository;
 import com.mercado.mercado.exception.ProdutoNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +18,8 @@ import java.util.stream.Collectors;
 public class ProdutoService {
     private final ProdutoRepository produtoRepository;
 
-    public List<ProdutosDTO> findAll() {
-        return produtoRepository.findAll().stream().map(Produtos::toDTO).collect(Collectors.toList());
+    public Page<ProdutosDTO> findAll(Pageable pageable) {
+        return produtoRepository.findAll(pageable).map(Produtos::toDTO);
     }
 
     @SneakyThrows
