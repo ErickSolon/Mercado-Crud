@@ -8,7 +8,7 @@
 
  - Página de estoque
  
-   ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/4c9b7fbb-3c5e-4e86-9125-ea50d2aa1519)
+   ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/11ff6587-603a-4eb6-b656-8681180d19f7)
 
  - Página para atualizar produto
    
