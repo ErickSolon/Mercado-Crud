@@ -30,7 +30,8 @@
 
  - Pàgina de estoque
    
-   ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/2eb351ce-5e96-475f-a852-1fe2970109bf)
+   ![image](https://github.com/ErickSolon/Mercado-Crud/assets/72041638/29968bbb-fef9-46f3-8c93-dbc7a1b88581)
+
 
 
 
