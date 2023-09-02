@@ -19,7 +19,7 @@ public class MercadoController {
     private final ProdutoService produtoService;
 
     @GetMapping
-    public ResponseEntity<Page<ProdutosDTO>> getProdutos(@PageableDefault(page = 0, sort = {"titulo"}) Pageable pageable) {
+    public ResponseEntity<Page<ProdutosDTO>> getProdutos(@PageableDefault(page = 0, sort = {"id"}, size = 5) Pageable pageable) {
         return ResponseEntity.ok(produtoService.findAll(pageable));
     }
 

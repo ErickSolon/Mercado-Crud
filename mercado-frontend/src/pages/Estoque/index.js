@@ -4,36 +4,35 @@ import { useNavigate } from "react-router-dom";
 
 const Estoque = () => {
   const [produtos, setProdutos] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const produtosPerPage = 5;
   const navigate = useNavigate();
+  const [totalPages, setTotalPages] = useState(0);
+
+  const loadProdutos = (page) => {
+    ProdutosService.getProdutos(page, produtosPerPage).then((res) => {
+      setProdutos(res.data.content);
+      setTotalPages(res.data.totalPages);
+    });
+  };
 
   useEffect(() => {
-    ProdutosService.getProdutos().then((res) => {
-      setProdutos(res.data.content);
-    });
-  }, []);
-
-  if (produtos.length === 0) return "Carregando...";
+    loadProdutos(currentPage);
+  }, [currentPage]);
 
   const deleteItem = (id) => {
     ProdutosService.deleteProdutoById(id).then(() => {
-      setProdutos(produtos.filter((produto) => produto.id !== id));
+      if (produtos.length === 1 && currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+      } else {
+        loadProdutos(currentPage);
+      }
     });
   };
 
   const updateItem = (id) => {
     navigate("/atualizar-produto/" + id);
   };
-
-  const indexOfLastProduto = currentPage * produtosPerPage;
-  const indexOfFirstProduto = indexOfLastProduto - produtosPerPage;
-  const currentProdutos = produtos.slice(
-    indexOfFirstProduto,
-    indexOfLastProduto
-  );
-
-  const totalPages = Math.ceil(produtos.length / produtosPerPage);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -51,7 +50,7 @@ const Estoque = () => {
           </tr>
         </thead>
         <tbody>
-          {currentProdutos.map((produto) => (
+          {produtos.map((produto) => (
             <tr key={produto.id}>
               <th scope="row">{produto.id}</th>
               <td>{produto.titulo}</td>
@@ -79,7 +78,7 @@ const Estoque = () => {
 
       <nav aria-label="Page navigation example">
         <ul className="pagination">
-          <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+          <li className={`page-item ${currentPage === 0 ? "disabled" : ""}`}>
             <button
               className="page-link"
               onClick={() => paginate(currentPage - 1)}
@@ -90,18 +89,16 @@ const Estoque = () => {
           {Array.from({ length: totalPages }, (_, index) => (
             <li
               key={index}
-              className={`page-item ${
-                currentPage === index + 1 ? "active" : ""
-              }`}
+              className={`page-item ${currentPage === index ? "active" : ""}`}
             >
-              <button className="page-link" onClick={() => paginate(index + 1)}>
+              <button className="page-link" onClick={() => paginate(index)}>
                 {index + 1}
               </button>
             </li>
           ))}
           <li
             className={`page-item ${
-              currentPage === totalPages ? "disabled" : ""
+              currentPage === totalPages - 1 ? "disabled" : ""
             }`}
           >
             <button

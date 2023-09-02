@@ -3,8 +3,13 @@ import axios from "axios";
 const baseURL = "http://127.0.0.1:8080/api/mercado/";
 
 class ProdutosService {
-  getProdutos() {
-    return axios.get(baseURL);
+  getProdutos(page, size) {
+    const params = {
+      page: page,
+      size: size,
+    };
+
+    return axios.get(baseURL, { params });
   }
 
   getProdutoById(id) {
