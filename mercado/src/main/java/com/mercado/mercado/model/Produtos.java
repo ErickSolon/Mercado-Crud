@@ -5,7 +5,7 @@ import lombok.*;
 
 import jakarta.persistence.*;
 
-@Table(name = "produtos")
+@Table(name = "HTE_PRODUTOS")
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,7 +15,8 @@ import jakarta.persistence.*;
 public class Produtos {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "produto_seq")
+    @SequenceGenerator(name = "produto_seq", sequenceName = "seq_produto", allocationSize = 1)
     private Long id;
 
     @Column(name = "titulo")
