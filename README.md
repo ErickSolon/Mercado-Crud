@@ -1,7 +1,8 @@
 # Mercado-Crud
 <h2>Backend</h2>
+
  - Spring Boot
- - H2
+ - Oracle Database
 
 
 <h2>React</h2>
